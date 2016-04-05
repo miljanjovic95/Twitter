@@ -74,7 +74,7 @@ public class Twitter {
 		for (int i = 0; i < poruke.size(); i++)
 			if (poruke.get(i).getPoruka().indexOf(tag) != -1)
 				if (brojac < maxBroj) {
-					rezultat[brojac] = poruke.get(i);
+					rezultat[brojac] = poruke.get(i);//treba samo brojac, a ne brojac+1
 					brojac++;
 				} else
 					break;
