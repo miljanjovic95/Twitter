@@ -1,11 +1,9 @@
 package com.twitter.poruke;
 
-
 /**
- * 
+ * Klasa koja sadrzi naziv korisnika i poruku.
+ *
  * @author Miljan Jovic
- * 
- *         Klasa koja sadrzi naziv korisnika i poruku.
  */
 
 public class TwitterPoruka {
@@ -15,7 +13,7 @@ public class TwitterPoruka {
 	 * proslediti poruku.
 	 */
 	private String korisnik;
-	
+
 	/**
 	 * Privatni atribut poruka, koji sadrzi tekst koji ce korisnik proslediti.
 	 */
@@ -44,7 +42,7 @@ public class TwitterPoruka {
 			throw new RuntimeException("Ime korisnika mora biti uneto");
 		this.korisnik = korisnik;
 	}
-	
+
 	/**
 	 * Metoda koja vraca poruku.
 	 * 
@@ -65,11 +63,11 @@ public class TwitterPoruka {
 	 *             koja je duza od 140 karaktera.
 	 */
 	public void setPoruka(String poruka) {
-		if (poruka == null || this.poruka.length() > 140)
+		if (poruka == null || poruka.length() > 140)
 			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
 		this.poruka = poruka;
 	}
-	
+
 	/**
 	 * Redefinisana toString metoda.
 	 * 

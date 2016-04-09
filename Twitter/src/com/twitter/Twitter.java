@@ -5,13 +5,11 @@ import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
 /**
+ * Klasa Twitter koja sadrzi listu TwitterPoruka, i metode za unos poruka u
+ * listu, vracanje liste, i niza poruka sa tagom.
  * 
  * @author Miljan Jovic
- * 
- *         Klasa Twitter koja sadrzi listu TwitterPoruka, i metode za unos
- *         poruka u listu, vracanje liste, i niza poruka sa tagom.
  */
-
 public class Twitter {
 
 	/**
@@ -54,6 +52,8 @@ public class Twitter {
 	 *            (int)
 	 * @param tag
 	 *            (String)
+	 * @throws RuntimeException
+	 *             - kadanije unesen tag
 	 * @return rezultat (TwitterPoruka[])
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
@@ -74,7 +74,8 @@ public class Twitter {
 		for (int i = 0; i < poruke.size(); i++)
 			if (poruke.get(i).getPoruka().indexOf(tag) != -1)
 				if (brojac < maxBroj) {
-					rezultat[brojac] = poruke.get(i);//treba samo brojac, a ne brojac+1
+					rezultat[brojac] = poruke.get(i);// treba samo brojac, a ne
+														// brojac+1
 					brojac++;
 				} else
 					break;
